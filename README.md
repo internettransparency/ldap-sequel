@@ -9,7 +9,7 @@ Research project to detect evidence of a LDAP server being outsourced and analyz
 
 
 ## Acknowledgment
-IP2Location.  
+Censys, CAIDA, Routeviews, IP2Location.  
 
 
 ## License
