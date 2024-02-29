@@ -1,0 +1,22 @@
+name: ldap-dependency
+services:
+    notebook:
+        userns_mode: keep-id
+        user: root
+        environment:
+            - JUPYTER_ENABLE_LAB=yes
+            - JUPYTER_PORT=8889
+            - RESTARTABLE=yes
+            - NB_USER=${CONTAINER_USER}
+            - NB_UID=${U_ID}
+            - NB_GID=${G_ID}
+            - NB_GROUP=${CONTAINER_USER}
+            - CHOWN_HOME=yes
+        working_dir: ${CONTAINER_HOME}
+        ports:
+            - $PORT:8889
+        volumes:
+            - $DATASET:${CONTAINER_HOME}/dataset
+            - $NOTEBOOK:${CONTAINER_HOME}/work
+        container_name: notebook
+        image: docker.io/jupyter/minimal-notebook
