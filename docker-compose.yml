@@ -1,6 +1,6 @@
 name: ldap-dependency
 services:
-    notebook:
+    pyspark-notebook:
         userns_mode: keep-id
         user: root
         environment:
@@ -15,8 +15,9 @@ services:
         working_dir: ${CONTAINER_HOME}
         ports:
             - $PORT:8889
+            - 4040:4040
         volumes:
             - $DATASET:${CONTAINER_HOME}/dataset
             - $NOTEBOOK:${CONTAINER_HOME}/work
         container_name: notebook
-        image: docker.io/jupyter/minimal-notebook
+        image: docker.io/jupyter/pyspark-notebook
