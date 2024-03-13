@@ -36,6 +36,17 @@ class GetDatasetInterface(ABC):
     def _get_date_from_filename(self, filename: str) -> str:
         pass
 
+    @abstractmethod
+    def all_files(self, date_list, folder: str = None):
+        pass
+
+    def _all_files(self, date_list, pattern):
+        for date_str in date_list:
+            try:
+                _ = self._get_latest_file(date_str, pattern)
+            except AssertionError:
+                return False
+        return True
 
 class GetPyAsnDataset(GetDatasetInterface):
     pyasn_dat_dir = "pyasn-dataset"
@@ -52,6 +63,9 @@ class GetPyAsnDataset(GetDatasetInterface):
         filename_no_extension = os.path.splitext(filename)[0]
         return filename_no_extension.split("_")[-1]
 
+    def all_files(self, date_list, folder: str = None):
+        subdir = os.path.join(self.dataset_dir, self.pyasn_dat_dir)
+        return self._all_files(date_list, subdir + "/*.dat")
 
 class GetAsOrgDataset(GetDatasetInterface):
     as_org_dataset_dir = "as-org-dataset"
@@ -67,3 +81,7 @@ class GetAsOrgDataset(GetDatasetInterface):
     def _get_date_from_filename(self, filename: str) -> str:
         filename_no_extension = os.path.splitext(filename)[0]
         return filename_no_extension.split(".")[0]
+
+    def all_files(self, date_list, folder: str = None):
+        subdir = os.path.join(self.dataset_dir, self.as_org_dataset_dir, folder)
+        return self._all_files(date_list, subdir + "/*.csv")

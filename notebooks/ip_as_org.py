@@ -6,55 +6,73 @@ __author__ = "Gustavo Luvizotto Cesar"
 __email__ = "g.luvizottocesar@utwente.nl"
 
 import pyasn
-from utils import GetPyAsnDataset, GetAsOrgDataset
 import pandas as pd
+
+from utils import GetPyAsnDataset, GetAsOrgDataset
 
 
 class IPASnPrefix(object):
 
-    def __init__(self, date_str: str, dataset_dir: str):
+    def __init__(self, date_list: list, dataset_dir: str):
         # Initialize module and load IP to ASN database
         p = GetPyAsnDataset(dataset_dir)
-        pyasn_dat = p.get_latest_file(date_str)
-        self.asndb = pyasn.pyasn(pyasn_dat)
+        if not p.all_files(date_list):
+            raise AssertionError("Could not find all the necessary files")
+        self.asndb_dict = {}
+        for date_str in date_list:
+            pyasn_dat = p.get_latest_file(date_str)
+            self.asndb_dict[date_str] = pyasn.pyasn(pyasn_dat)
 
-    def get_asn_from_ip(self, ip: str) -> int:
+    def get_asn_from_ip(self, ip: str, when: str) -> int:
         """
         asd
         :param ip:
         :return:
         """
-        return self.asndb.lookup(ip)[0]
+        db = self.asndb_dict[when]
+        return db.lookup(ip)[0]
 
-    def get_prefix_from_ip(self, ip: str) -> str:
-        return self.asndb.lookup(ip)[-1]
+    def get_prefix_from_ip(self, ip: str, when: str) -> str:
+        db = self.asndb_dict[when]
+        return db.lookup(ip)[-1]
 
-    def get_prefixes_from_asn(self, asn: int):
+    def get_prefixes_from_asn(self, asn: int, when: str):
         """
         asd
         :param asn:
         :return:
         """
-        return self.asndb.get_as_prefixes(asn)
+        db = self.asndb_dict[when]
+        return db.get_as_prefixes(asn)
 
 
 class ASOrg(object):
 
-    def __init__(self, date_str: str, dataset_dir: str):
+    def __init__(self, date_list: list, dataset_dir: str):
         as_org_dataset = GetAsOrgDataset(dataset_dir)
-        as_org_id_file = as_org_dataset.get_latest_file(date_str, "as-org_id")
-        self.as_org_id_df = pd.read_csv(as_org_id_file, sep="|")
-        org_id_name_c_file = as_org_dataset.get_latest_file(date_str, "org_id-name-c")
-        self.org_id_name_c_df = pd.read_csv(org_id_name_c_file, sep="|")
+        if not as_org_dataset.all_files(date_list, "as-org_id"):
+            raise AssertionError("Could not find all the necessary files")
+        self.as_org_id_df_dict = {}
+        self.org_id_name_c_df_dict = {}
+        for date_str in date_list:
+            as_org_id_file = as_org_dataset.get_latest_file(date_str, "as-org_id")
+            self.as_org_id_df_dict[date_str] = pd.read_csv(as_org_id_file, sep="|")
+            org_id_name_c_file = as_org_dataset.get_latest_file(date_str, "org_id-name-c")
+            self.org_id_name_c_df_dict[date_str] = pd.read_csv(org_id_name_c_file, sep="|")
 
-    def get_org_name_from_asn(self, asn: int) -> str:
-        return self._get_org_name_country_from_asn(asn, "org_name")
+    def get_org_name_from_asn(self, asn: int, when: str) -> str:
+        return self._get_org_name_country_from_asn(asn, "org_name", when)
 
-    def _get_org_name_country_from_asn(self, asn, property):
-        org_id = self.as_org_id_df.loc[self.as_org_id_df["aut"] == asn]["org_id"]
-        item = self.org_id_name_c_df.loc[self.org_id_name_c_df["org_id"] ==
-                                             org_id.item()][property]
+    def _get_org_name_country_from_asn(self, asn, prop, when):
+        as_org_id_df = self.as_org_id_df_dict[when]
+        org_id_name_c_df = self.org_id_name_c_df_dict[when]
+        org_id = as_org_id_df.loc[as_org_id_df["aut"] == asn]["org_id"]
+        try:
+            org_id_item = org_id.item()
+            item = org_id_name_c_df.loc[org_id_name_c_df["org_id"] == org_id_item][prop]
+        except ValueError as exc:
+            raise ValueError(f"Could not find {prop} for ASN {asn} at {when} item {org_id}") from exc
         return item.item()
 
-    def get_country_from_asn(self, asn: int) -> str:
-        return self._get_org_name_country_from_asn(asn, "country")
+    def get_country_from_asn(self, asn: int, when: str) -> str:
+        return self._get_org_name_country_from_asn(asn, "country", when)

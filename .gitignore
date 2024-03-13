@@ -6,3 +6,6 @@ session
 /notebooks/__pycache__/*
 .vscode/*
 .idea/*
+/notebooks/requirements.txt
+/notebooks/output/*
+/notebooks/checkpoint/*

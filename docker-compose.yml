@@ -1,6 +1,9 @@
 name: ldap-dependency
 services:
     pyspark-notebook:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
         userns_mode: keep-id
         user: root
         environment:
@@ -20,4 +23,4 @@ services:
             - $DATASET:${CONTAINER_HOME}/dataset
             - $NOTEBOOK:${CONTAINER_HOME}/work
         container_name: notebook
-        image: docker.io/jupyter/pyspark-notebook
+        command: "start-notebook.sh --NotebookApp.allow_origin='*' --NotebookApp.ip='0.0.0.0'"
