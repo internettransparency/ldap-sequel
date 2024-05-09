@@ -9,3 +9,6 @@ session
 /notebooks/requirements.txt
 /notebooks/output/*
 /notebooks/checkpoint/*
+notebooks/ldap_oid_dict.json
+notebooks/schema_attributes.csv
+notebooks/root_dse_attributes.csv

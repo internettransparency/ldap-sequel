@@ -1,0 +1,20 @@
+{
+    "verboseOutput": false,
+    "exclude": [
+        "**/*{.jpg,.png,.gif,.webp,.jpeg,.pdf}",
+        "**/__pycache__/**",
+        "**/.ipynb_checkpoints/**",
+        "**/.git/**",
+        "**/.git/objects/**",
+        "**/.git/subtree-cache/**",
+        "**/.venv/**",
+        "**/venv/**",
+        "**/checkpoint/**",
+        "**/node_modules/*/**",
+        "**/spark-warehouse/**",
+        "**/.pytest_cache/**",
+        "python",
+        "**/venv/*/**",
+        "**/venv/lib/**"
+    ]
+}

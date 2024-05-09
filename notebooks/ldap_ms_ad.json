@@ -1,0 +1,202 @@
+{
+    "1.2.840.113556.1.4.319":
+    {
+        "description": "LDAP_PAGED_RESULT_OID_STRING",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.521":
+    {
+        "description": "LDAP_SERVER_CROSSDOM_MOVE_TARGET_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.841":
+    {
+        "description": "LDAP_SERVER_DIRSYNC_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1339":
+    {
+        "description": "LDAP_SERVER_DOMAIN_SCOPE_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.529":
+    {
+        "description": "LDAP_SERVER_EXTENDED_DN_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.970":
+    {
+        "description": "LDAP_SERVER_GET_STATS_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.619":
+    {
+        "description": "LDAP_SERVER_LAZY_COMMIT_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1413":
+    {
+        "description": "LDAP_SERVER_PERMISSIVE_MODIFY_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.528":
+    {
+        "description": "LDAP_SERVER_NOTIFICATION_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.474":
+    {
+        "description": "LDAP_SERVER_RESP_SORT_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.801":
+    {
+        "description": "LDAP_SERVER_SD_FLAGS_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1340":
+    {
+        "description": "LDAP_SERVER_SEARCH_OPTIONS_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.473":
+    {
+        "description": "LDAP_SERVER_SORT_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.417":
+    {
+        "description": "LDAP_SERVER_SHOW_DELETED_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.805":
+    {
+        "description": "LDAP_SERVER_TREE_DELETE_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1338":
+    {
+        "description": "LDAP_SERVER_VERIFY_NAME_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "2.16.840.1.113730.3.4.9":
+    {
+        "description": "LDAP_CONTROL_VLVREQUEST",
+        "rfc": "Microsoft Active Directory"
+    },
+    "2.16.840.1.113730.3.4.10":
+    {
+        "description": "LDAP_CONTROL_VLVRESPONSE",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1504":
+    {
+        "description": "LDAP_SERVER_ASQ_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1852":
+    {
+        "description": "LDAP_SERVER_QUOTA_CONTROL_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.802":
+    {
+        "description": "LDAP_SERVER_RANGE_OPTION_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1907":
+    {
+        "description": "LDAP_SERVER_SHUTDOWN_NOTIFY_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1974":
+    {
+        "description": "LDAP_SERVER_FORCE_UPDATE_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1948":
+    {
+        "description": "LDAP_SERVER_RANGE_RETRIEVAL_NOERR_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.1341":
+    {
+        "description": "LDAP_SERVER_RODC_DCPROMO_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2026":
+    {
+        "description": "LDAP_SERVER_DN_INPUT_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2065":
+    {
+        "description": "LDAP_SERVER_SHOW_DEACTIVATED_LINK_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2064":
+    {
+        "description": "LDAP_SERVER_SHOW_RECYCLED_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2066":
+    {
+        "description": "LDAP_SERVER_POLICY_HINTS_DEPRECATED_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2090":
+    {
+        "description": "LDAP_SERVER_DIRSYNC_EX_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2205":
+    {
+        "description": "LDAP_SERVER_UPDATE_STATS_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2204":
+    {
+        "description": "LDAP_SERVER_TREE_DELETE_EX_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2206":
+    {
+        "description": "LDAP_SERVER_SEARCH_HINTS_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2211":
+    {
+        "description": "LDAP_SERVER_EXPECTED_ENTRY_COUNT_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2239":
+    {
+        "description": "LDAP_SERVER_POLICY_HINTS_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2255":
+    {
+        "description": "LDAP_SERVER_SET_OWNER_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2256":
+    {
+        "description": "LDAP_SERVER_BYPASS_QUOTA_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2309":
+    {
+        "description": "LDAP_SERVER_LINK_TTL_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2330":
+    {
+        "description": "LDAP_SERVER_SET_CORRELATION_ID_OID",
+        "rfc": "Microsoft Active Directory"
+    },
+    "1.2.840.113556.1.4.2354":
+    {
+        "description": "LDAP_SERVER_THREAD_TRACE_OVERRIDE_OID",
+        "rfc": "Microsoft Active Directory"
+    }
+}
