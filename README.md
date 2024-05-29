@@ -1,9 +1,9 @@
-# ldap-dependency-code
+# ldap-sequel
 
-Finding dependencies through outsourcing in LDAP servers and TLS analysis.
+Continuation of LDAP research.  
 
 ## Description
-Research project to detect evidence of a LDAP server being outsourced and analyzing TLS configuration of such servers.
+Research project to investigate the LDAP deployment ecosystem and their security.  
 
 ## Usage
 
