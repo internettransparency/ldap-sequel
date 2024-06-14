@@ -24,10 +24,10 @@ func Match(fps *recog.FingerprintSet, input Input, resultChan chan result.Result
 		Ip:   input.Ip,
 		Port: input.Port,
 	}
-	rawResponse, err := base64.StdEncoding.DecodeString(input.RawResponseB64)
+	rawResponse, err := base64.RawStdEncoding.DecodeString(input.RawResponseB64)
 	if err != nil {
 		resultChan <- res
-		log.Fatal().Err(err).Msg("Failed to decode base64")
+		log.Fatal().Int("id", input.Id).Err(err).Msg("Failed to decode base64")
 	}
 
 	matches := fps.MatchAll("ldap.search_result", string(rawResponse))
