@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"errors"
 	"flag"
 	"github.com/gustavoluvizotto/ldap-sequel/ldap-identification/result"
 	"os"
@@ -66,44 +67,50 @@ func main() {
 		log.Fatal().Msg("Output file is required")
 	}
 
-	resultChan := matchResponse(inputCsv)
-	result.ConsumeResult(*resultChan, len(*resultChan), output)
+	log.Info().Msg("Starting LDAP server identification...")
+	resultChan, nrResults, err := matchResponse(inputCsv)
+	if err != nil {
+		log.Fatal().Err(err).Msg("Failed to match responses")
+	}
+	result.ConsumeResult(*resultChan, nrResults, output)
 	log.Info().Msg("Finished")
 }
 
-func matchResponse(inputCsv string) *chan result.Result {
+func matchResponse(inputCsv string) (*chan result.Result, int, error) {
 	fps, err := recog.LoadFingerprintsDir("recog/xml")
 	if err != nil {
-		log.Fatal().Err(err).Msg("Failed to load fingerprints")
+		return nil, 0, err
 	}
+	log.Info().Msg("Fingerprints loaded")
+
 	file, err := os.Open(inputCsv)
 	if err != nil {
-		log.Fatal().Err(err).Str("file", inputCsv).Msg("Failed to open input file")
+		return nil, 0, err
 	}
 	defer file.Close()
 
 	csvReader := csv.NewReader(file)
 	records, err := csvReader.ReadAll()
 	if err != nil {
-		log.Fatal().Err(err).Msg("Failed to read CSV file")
+		return nil, 0, err
 	}
 
-	log.Info().Msg("Starting LDAP server identification...")
-	resultChan := make(chan result.Result, len(records)-1)
-	for _, record := range records[1:] {
+	nrRecords := len(records) - 1
+	resultChan := make(chan result.Result, nrRecords)
+	for i, record := range records[1:] { // skip header
 		input := match.Input{}
 		input.Id, err = strconv.Atoi(record[0])
 		if err != nil {
-			log.Fatal().Err(err).Str("id", record[0]).Msg("Failed to convert id to int")
+			return nil, i, errors.New(err.Error() + " id: " + record[0])
 		}
 		input.Ip = record[1]
 		input.Port, err = strconv.Atoi(record[2])
 		if err != nil {
-			log.Fatal().Err(err).Str("port", record[2]).Msg("Failed to convert port to int")
+			return nil, i, errors.New(err.Error() + " port: " + record[2])
 		}
 		input.RawResponseB64 = record[3]
-		match.Match(fps, input, resultChan)
+		go match.Match(fps, input, resultChan)
 	}
 
-	return &resultChan
+	return &resultChan, nrRecords, nil
 }
