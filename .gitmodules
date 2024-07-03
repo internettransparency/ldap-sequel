@@ -1,4 +1,4 @@
 [submodule "ldap-identification/recog"]
 	path = ldap-identification/recog
-	url = git@github.com:gustavoluvizotto/recog.git
-	branch = research
+	url = git@github.com:rapid7/recog.git
+	branch = main
