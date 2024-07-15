@@ -3,6 +3,6 @@
 	url = git@github.com:rapid7/recog.git
 	branch = main
 [submodule "cloud-ip-prefixes"]
-	path = cloud-ip-prefixes
+	path = notebooks/cloud-ip-prefixes
     url = git@github.com:gustavoluvizotto/cloud-ip-prefixes.git
     branch = main
