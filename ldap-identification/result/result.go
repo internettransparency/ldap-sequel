@@ -2,10 +2,11 @@ package result
 
 import (
 	"encoding/csv"
-	"github.com/rs/zerolog/log"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/rs/zerolog/log"
 )
 
 // Result channels the results of the match function
@@ -16,6 +17,7 @@ type Result struct {
 	Matches   []map[string]string
 	Name      string
 	Certainty float64
+	Version   string
 }
 
 // ConsumeResult consumes the results from the match function
@@ -28,6 +30,7 @@ func ConsumeResult(resultChan chan Result, nrResults int, fileName string) {
 	for i, result := range allLinesResults {
 		certainty := 0.0
 		name := ""
+		version := ""
 		for _, match := range result.Matches {
 			currentCertainty, err := strconv.ParseFloat(strings.TrimSpace(match["fp.certainty"]), 32)
 			if err != nil {
@@ -36,11 +39,13 @@ func ConsumeResult(resultChan chan Result, nrResults int, fileName string) {
 			// only the most certain match is considered
 			if currentCertainty > certainty {
 				name = getServerName(match)
+				version = getServerVersion(match)
 				certainty = currentCertainty
 			}
 
 		}
 		allLinesResults[i].Name = name
+		allLinesResults[i].Version = version
 		allLinesResults[i].Certainty = certainty
 	}
 	store(allLinesResults, fileName)
@@ -72,6 +77,20 @@ func getServerName(match map[string]string) string {
 	return name
 }
 
+func getServerVersion(match map[string]string) string {
+	// build the server version similarly to the version field of recog/xml/ldap_searchresult.xml
+	// service.version
+	// os.version
+	version := ""
+	if version, ok := match["service.version"]; ok {
+		return version
+	}
+	if version, ok := match["os.version"]; ok {
+		return version
+	}
+	return version
+}
+
 func store(results []Result, fileName string) {
 	// store results in a CSV file
 	file, err := os.Create(fileName)
@@ -84,7 +103,7 @@ func store(results []Result, fileName string) {
 	defer writer.Flush()
 
 	// Write the header
-	header := []string{"id", "ip", "port", "server_name", "certainty"}
+	header := []string{"id", "ip", "port", "server_name", "version", "certainty"}
 	if err := writer.Write(header); err != nil {
 		log.Fatal().Err(err).Msg("Failed to write header to file")
 	}
@@ -96,6 +115,7 @@ func store(results []Result, fileName string) {
 			record.Ip,
 			strconv.Itoa(record.Port),
 			record.Name,
+			record.Version,
 			strconv.FormatFloat(record.Certainty, 'f', 1, 64),
 		}
 		if err := writer.Write(row); err != nil {
