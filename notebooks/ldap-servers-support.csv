@@ -1,0 +1,20 @@
+os_name,comment,about,life_cycle
+Windows Server 2016,Cloud-ready server. Under extended end date until 2027-01-12,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2016
+Windows Server 2008 R2,End of life since 2020-01-14,,https://learn.microsoft.com/nl-nl/lifecycle/products/windows-server-2008-r2
+Windows Server 2012 R2,Cloud and datacenter platform. End of life since 2023-10-10. ESU Year 3 ends at 2026-10-13,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2012-r2,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2
+Windows Server 2003,End of life since 2015-07-14,,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2003-
+Windows Server 2012,Cloud and datacenter platform. End of life since 2023-10-10. ESU Year 3 ends at 2026-10-13,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2012-r2,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2
+Windows Server 2000,End of life since 2010-07-13,,https://eyeforce.my.site.com/eyefinitysupport/s/article/End-of-Support-for-Microsoft-Windows-2000-Worldwide
+VMware Platform Services Controller,
+Scalix LDAP Server,
+Kerio Connect,
+Sun Directory Server,
+OpenLDAP,
+UnboundID Directory Server,
+IBM Security Directory Server,
+IBM Domino LDAP Server,
+estos MetaDirectory Server,
+Sun Directory Proxy Server,
+Oracle Sun Directory Server,
+Sun Java System Directory Server,
+Fedora Project 389 Directory Server,
