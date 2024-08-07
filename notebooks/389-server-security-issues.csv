@@ -1,0 +1,9 @@
+last_affected_version,security_issue,url
+2.4.5,DoS,https://github.com/389ds/389-ds-base/security/advisories/GHSA-h889-v4mc-prq9
+1.3.7.2,DoS,https://github.com/389ds/389-ds-base/security/advisories/GHSA-xrmw-x68q-3g3q
+1.3.11.1,DoS,https://github.com/389ds/389-ds-base/security/advisories/GHSA-3vv9-2qhh-vpvw
+1.4.3.31,DoS-HeapOverflow,https://github.com/389ds/389-ds-base/security/advisories/GHSA-5wrh-89cg-j4pv
+2.0.17,DoS-HeapOverflow,https://github.com/389ds/389-ds-base/security/advisories/GHSA-5wrh-89cg-j4pv
+2.1.6,DoS-HeapOverflow,https://github.com/389ds/389-ds-base/security/advisories/GHSA-5wrh-89cg-j4pv
+2.2.4,DoS-HeapOverflow,https://github.com/389ds/389-ds-base/security/advisories/GHSA-5wrh-89cg-j4pv
+2.3.1,DoS-HeapOverflow,https://github.com/389ds/389-ds-base/security/advisories/GHSA-5wrh-89cg-j4pv
