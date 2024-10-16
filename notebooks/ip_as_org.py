@@ -79,7 +79,15 @@ class ASOrg(object):
 
     def get_asn_from_org_name(self, org_name: str, when: str) -> int:
         org_id_name_c_df = self.org_id_name_c_df_dict[when]
-        org_id = org_id_name_c_df.loc[org_id_name_c_df["org_name"].str.contains(org_name, case=False, na=False)]["org_id"]
+        def _has_org_in_dataset(org_actual, org_expected):
+            if org_actual is None or pd.isna(org_actual):
+                return False
+            if org_expected.casefold() in org_actual.casefold().split(" "):
+                return True
+            return False
+        #org_id = org_id_name_c_df.loc[org_id_name_c_df["org_name"].str.contains(org_name, case=False, na=False)]["org_id"]
+        org_id_name_c_df["has_in_dataset"] = org_id_name_c_df["org_name"].apply(_has_org_in_dataset, args=(org_name,))
+        org_id = org_id_name_c_df[org_id_name_c_df["has_in_dataset"] == True]["org_id"]
         as_org_id_df = self.as_org_id_df_dict[when]
         asn = as_org_id_df.loc[as_org_id_df["org_id"].isin(org_id)]["aut"].to_list()
         return asn

@@ -1,13 +1,14 @@
 os_name,icon,veredict,comment,about,life_cycle
 Windows Server 2016,\faThumbsUp,Receives security updates,Cloud-ready server. It could be used to host a different type of LDAP server. However AD is more natural way to go. . Under extended end date until 2027-01-12,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2016
 Windows Server 2008 R2,\faRemove,End of life,End of life since 2020-01-14,,https://learn.microsoft.com/nl-nl/lifecycle/products/windows-server-2008-r2
-Windows Server 2012 R2,\faRemove,End of life,Cloud and datacenter platform. End of life since 2023-10-10. ESU Year 3 ends at 2026-10-13,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2012-r2,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2
+Windows Server 2008,\faRemove,End of life,End of life since 2020-01-14,,https://learn.microsoft.com/nl-nl/lifecycle/products/windows-server-2008
+Windows Server 2012 R2,\faExclamation,Under extended security update,Cloud and datacenter platform. End of life since 2023-10-10. ESU Year 3 ends at 2026-10-13,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2012-r2,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2
 Windows Server 2003,\faRemove,End of life,End of life since 2015-07-14,,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2003-
-Windows Server 2012,\faRemove,End of life,Cloud and datacenter platform. End of life since 2023-10-10. ESU Year 3 ends at 2026-10-13,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2012-r2,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2
+Windows Server 2012,\faExclamation,Under extended security update,Cloud and datacenter platform. End of life since 2023-10-10. ESU Year 3 ends at 2026-10-13,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2012-r2,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2
 Windows Server 2000,\faRemove,End of life,End of life since 2010-07-13,,https://eyeforce.my.site.com/eyefinitysupport/s/article/End-of-Support-for-Microsoft-Windows-2000-Worldwide
 VMware Platform Services Controller,\faHourglassHalf,No information available,No information about its life cycle. Representative from Broadcom mentioned that version 6.x is EOGS in March 2020. The 7.x support available until Oct 2025. The 8.x has support available until Oct 2027,https://support.broadcom.com/group/ecx/productlifecycle,
 Scalix LDAP Server,\faRemove,End of life,The scalix website is not even running. There seems to be no support at all. Since the software base is more than 15 years old - said in 2008. Part of Scalix is OpenSourced and started in 2006,https://dl.acm.org/doi/book/10.5555/1816981,
-Kerio Connect,\faQuestion,No information available and no version found,no version found,,
+Kerio Connect,\faMehO,No information available and no version found,no version found,https://support.kerioconnect.gfi.com/hc/en-us,
 Sun Directory Server,\faRemove,End of life,end of support without known the date according to customer support representative.,,https://support.oracle.com/knowledge/Middleware/1376249_1.html#aref_section324
 OpenLDAP,\faMehO,Community support but no version found,no version found,,
 UnboundID Directory Server,\faQuestion,No information available,contacted representative,https://docs.ping.directory/PingDirectory/3.2.1.0/getting-started.html,
