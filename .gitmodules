@@ -1,7 +1,7 @@
 [submodule "ldap-identification/recog"]
 	path = ldap-identification/recog
-	url = git@github.com:rapid7/recog.git
-	branch = main
+	url = git@github.com:gustavoluvizotto/recog.git
+	branch = fix-ldap-windows-fingerprints
 [submodule "cloud-ip-prefixes"]
 	path = notebooks/cloud-ip-prefixes
     url = git@github.com:gustavoluvizotto/cloud-ip-prefixes.git
