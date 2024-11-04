@@ -1,7 +1,7 @@
 os_name,icon,veredict,comment,about,life_cycle
 Windows Server 2016,\faThumbsUp,Receives security updates,Cloud-ready server. It could be used to host a different type of LDAP server. However AD is more natural way to go. . Under extended end date until 2027-01-12,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2016
-Windows Server 2008 R2,\faRemove,End of life,End of life since 2020-01-14,,https://learn.microsoft.com/nl-nl/lifecycle/products/windows-server-2008-r2
-Windows Server 2008,\faRemove,End of life,End of life since 2020-01-14,,https://learn.microsoft.com/nl-nl/lifecycle/products/windows-server-2008
+Windows Server 2008 R2,\faRemove,End of life,End of life since 2020-01-14,,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2008-r2
+Windows Server 2008,\faRemove,End of life,End of life since 2020-01-14,,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2008
 Windows Server 2012 R2,\faExclamation,Under extended security update,Cloud and datacenter platform. End of life since 2023-10-10. ESU Year 3 ends at 2026-10-13,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2012-r2,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2
 Windows Server 2003,\faRemove,End of life,End of life since 2015-07-14,,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2003-
 Windows Server 2012,\faExclamation,Under extended security update,Cloud and datacenter platform. End of life since 2023-10-10. ESU Year 3 ends at 2026-10-13,https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2012-r2,https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2
@@ -14,7 +14,7 @@ OpenLDAP,\faMehO,Community support but no version found,no version found,,
 UnboundID Directory Server,\faQuestion,No information available,contacted representative,https://docs.ping.directory/PingDirectory/3.2.1.0/getting-started.html,
 IBM Security Directory Server,\faRemove,End of life,Version 6.X is end of life in September 2024. Hence any version we found is already deprecated,https://www.ibm.com/docs/en/sdse/6.4.0?topic=overview-security-directory-server,https://www.ibm.com/support/pages/node/1208710
 IBM Domino LDAP Server,\faRemove,End of life,The highest version we have is already end of life since 2021. Hence any version we found is deprecated.,,https://www.ibm.com/support/pages/node/1197580
-estos MetaDirectory Server,\faRemove,End of life,All MetaDirectory server versions are already end of life since Aug 2023. There is a scope of goodwill to support products via specific request that surpassed the end of life period. The estos page says that this occurs in case a new product order or migration is in process.,,https://support.estos.de/en/produkte/produktlebenszyklus-uebersicht
+estos MetaDirectory Server,\faRemove,End of life,MetaDirectory 3.5 server versions are already end of life since 31-Dec-2018. There is a scope of goodwill to support products via specific request that surpassed the end of life period. The estos page says that this occurs in case a new product order or migration is in process.,,https://support.estos.de/en/produkte/produktlebenszyklus-uebersicht
 Sun Directory Proxy Server,\faQuestion,No information available,oracle customer support contacted,,
 Oracle Sun Directory Server,\faQuestion,No information available,oracle customer support contacted,,
 Sun Java System Directory Server,\faQuestion,No information available,oracle customer support contacted,,

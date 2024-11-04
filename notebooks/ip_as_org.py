@@ -71,7 +71,8 @@ class ASOrg(object):
             org_id_item = org_id.item()
             item = org_id_name_c_df.loc[org_id_name_c_df["org_id"] == org_id_item][prop]
         except ValueError as exc:
-            raise ValueError(f"Could not find {prop} for ASN {asn} at {when} item {org_id}") from exc
+            #raise ValueError(f"Could not find {prop} for ASN {asn} at {when} item {org_id}") from exc
+            return ""
         return item.item()
 
     def get_country_from_asn(self, asn: int, when: str) -> str:
