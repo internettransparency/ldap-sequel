@@ -81,6 +81,9 @@ class ASOrg(object):
     def get_asn_from_org_name(self, org_name: str, when: str) -> int:
         org_id_name_c_df = self.org_id_name_c_df_dict[when]
         def _has_org_in_dataset(org_actual, org_expected):
+            if isinstance(org_actual, float) or isinstance(org_expected, float):
+                # avoid NaN
+                return False
             if org_actual is None or pd.isna(org_actual):
                 return False
             if org_expected.casefold() in org_actual.casefold().split(" "):
