@@ -4,5 +4,9 @@
 	branch = fix-ldap-windows-fingerprints
 [submodule "cloud-ip-prefixes"]
 	path = notebooks/cloud-ip-prefixes
-    url = git@github.com:gustavoluvizotto/cloud-ip-prefixes.git
-    branch = main
+    	url = git@github.com:gustavoluvizotto/cloud-ip-prefixes.git
+    	branch = main
+[submodule "cvelistV5"]
+	path = notebooks/cvelistV5
+	url = git@github.com:CVEProject/cvelistV5.git
+	branch = main
