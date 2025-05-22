@@ -14,3 +14,7 @@
 	path = goscanner-fork
 	url = https://github.com/gustavoluvizotto/goscanner-fork
 	branch = ldaps-scanner
+[submodule "cert-validator"]
+	path = cert-validator
+	url = https://github.com/gustavoluvizotto/cert-validator
+	branch = main
