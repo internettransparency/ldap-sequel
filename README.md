@@ -6,10 +6,10 @@ Continuation of LDAP research.
 Research project to investigate the LDAP deployment ecosystem and their security.  
 
 ## Usage
-
+See notebooks/analysis.ipynb
 
 ## Acknowledgment
-Censys, CAIDA, Routeviews, IP2Location.  
+CAIDA, Routeviews, IP2Location.  
 
 
 ## License
