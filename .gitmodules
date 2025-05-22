@@ -10,3 +10,7 @@
 	path = notebooks/cvelistV5
 	url = git@github.com:CVEProject/cvelistV5.git
 	branch = main
+[submodule "goscanner-fork"]
+	path = goscanner-fork
+	url = https://github.com/gustavoluvizotto/goscanner-fork
+	branch = ldaps-scanner
