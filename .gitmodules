@@ -18,3 +18,7 @@
 	path = cert-validator
 	url = https://github.com/gustavoluvizotto/cert-validator
 	branch = main
+[submodule "internet-wide-scans"]
+	path = internet-wide-scans
+	url = https://gitlab.utwente.nl/m7711402/internet-wide-scans
+	branch = main
