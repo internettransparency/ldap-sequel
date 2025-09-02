@@ -1,4 +1,4 @@
-name: ldap-dependency
+name: ldap-sequel
 services:
     pyspark-notebook:
         userns_mode: keep-id
@@ -17,8 +17,9 @@ services:
             - $PORT:$PORT
             - 4040:4040
         volumes:
-            - $DATASET:${CONTAINER_HOME}/dataset
-            - $NOTEBOOK:${CONTAINER_HOME}/work
+            - ${DATASET}:${CONTAINER_HOME}/dataset
+            - ${CENSYS}:${CONTAINER_HOME}/dataset/censys
+            - ${NOTEBOOK}:${CONTAINER_HOME}/work
             - type: bind
               source: /srv/hdd-pool/dataset/dataset/
               target: /srv/hdd-pool/dataset/dataset/
