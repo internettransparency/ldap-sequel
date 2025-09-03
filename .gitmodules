@@ -4,13 +4,13 @@
 	branch = fix-ldap-windows-fingerprints
 [submodule "goscanner-fork"]
 	path = goscanner-fork
-	url = https://github.com/gustavoluvizotto/goscanner-fork
+	url = git@github.com:gustavoluvizotto/goscanner-fork.git
 	branch = ldaps-scanner
 [submodule "cert-validator"]
 	path = cert-validator
-	url = https://github.com/gustavoluvizotto/cert-validator
+	url = git@github.com:gustavoluvizotto/cert-validator.git
 	branch = main
 [submodule "internet-wide-scans"]
 	path = internet-wide-scans
-	url = https://gitlab.utwente.nl/m7711402/internet-wide-scans
+	url = git@gitlab.utwente.nl:m7711402/internet-wide-scans.git
 	branch = main
