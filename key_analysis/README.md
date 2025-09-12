@@ -1,4 +1,4 @@
-# LDAP Sequel - Key Analysis
+# X.509 Key Analysis
 
 This subproject contains scripts for the key analysis of certificates conducted in the paper. For the analysis, the [badkeys](https://github.com/badkeys/badkeys) tool and the [pwnedkeys](https://pwnedkeys.com/) platform were used.
 
