@@ -2,6 +2,10 @@
 
 Welcome to the software artifacts of the aforementioned paper. This repository provides resources needed to examine and reproduce our work.  
 
+Paper presented at [CNSM 2025](https://www.cnsm-conf.org/2025/program.html).
+
+[Full paper](https://ieeexplore.ieee.org/document/11297453).
+
 ## Description
 Research project to investigate the LDAP hosting ecosystem and their security.  
 
